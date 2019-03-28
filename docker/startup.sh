@@ -10,12 +10,12 @@ iptables -t nat -A POSTROUTING -j MASQUERADE
 
 /etc/init.d/rcS
 
-# Wait 20 seconds to start monitoring
-sleep $launchdelay
+# Wait 40 seconds to start monitoring
+sleep 40
 
 # Method 1
 # busybox wait for process to exit
-while (ps | grep $waitproc | grep -v grep); do sleep 3; done
+while (ps | grep bootexec | grep -v grep); do sleep 3; done
 
 # Method 2
 #pid=`pidof $waitproc`
