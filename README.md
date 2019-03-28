@@ -5,7 +5,7 @@ Launch recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker fro
 # Steps
 
 1. cd to this directory.
-2. ./install.sh
+2. ./install.sh (not with sudo)
 3. Logout and back in or reboot
 4. Launch Recalbox from desktop (Media/Games)
 
