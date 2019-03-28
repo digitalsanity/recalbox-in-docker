@@ -27,6 +27,7 @@ sudo apt install -y \
        gnupg \
        gpgv \
        kbd \
+       wget \
        screen
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -

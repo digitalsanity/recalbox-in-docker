@@ -17,7 +17,7 @@ Run ./install.sh again at any time to update recalbox to the latest version.  Yo
 1. cd to this directory.
 2. ./build-prepare.sh - Install Docker and dependencies.
 3. ./build-rootfs.sh - Grab and build rootfs.  There will be some rsync errors/warnings - it's OK.
-4. Optional: Review docker/rootfs and build-docker-from-rootfs.sh for files that will be removed.
+4. Optional: Review docker/rootfs and build-docker-from-rootfs.sh for files that will be removed.  Review docker/startup.sh for how the image is booted.
 5. ./build-docker-from-rootfs.sh - Build docker from docker/rootfs.
 6. Launch Recalbox or /usr/local/bin/recalbox-boot-stopx.sh from desktop, or close your desktop and launch /usr/local/bin/recalbox-boot.sh from tty1.
 
