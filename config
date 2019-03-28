@@ -1,0 +1,16 @@
+# github user/repo and app name
+name="recalbox"
+
+release_owner="mrfixit2001"
+release="recalbox_rockpro64"
+
+waitproc="bootexec"
+inport=80
+extport=18080
+launchdelay=20
+
+url=`curl -s https://api.github.com/repos/$release_owner/$release/releases/latest | grep -oP '"browser_download_url": "\K(.*)(?=")'`
+
+# get specific file instead
+# url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
+

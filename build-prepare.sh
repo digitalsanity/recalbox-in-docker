@@ -1,6 +1,8 @@
 #!/bin/bash
 user=$USER
 
+. config
+
 echo "Installing docker and adding $USER to docker group.  Reboot or logout afterwards to apply permissions to your accout."
 
 while true; do
@@ -34,11 +36,8 @@ sudo apt update
 sudo apt install -y docker-ce
 sudo docker version
 sudo addgroup $user docker
-sudo usermod -aG docker rock
+sudo usermod -aG docker $user
 
-echo "Please reboot or logout/login before running any containers."
-
-echo "These commands will launch your container after it is built:"
-sudo cp *-boot*.sh /usr/local/bin/
+sudo cp boot.sh /usr/local/bin/${name}-boot.sh
+sudo cp boot-fromx.sh /usr/local/bin/${name}-boot-fromx.sh
 sudo cp *.desktop /usr/share/applications/
-ls /usr/local/bin/*-boot*.sh

@@ -5,5 +5,12 @@ img-mount/
 *.img.xz
 *.7z
 *.gz
+*.bz
+*.bz2
 *.log
 *.swp
+*.iso
+*.zip
+*.rar
+*.lz
+/.release

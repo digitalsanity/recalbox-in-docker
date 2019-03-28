@@ -1,10 +1,6 @@
 #!/bin/bash
 
-# get specific file
-# url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
-
-# get latest release
-url=`curl -s https://api.github.com/repos/mrfixit2001/recalbox_rockpro64/releases/latest | grep -oP '"browser_download_url": "\K(.*)(?=")'`
+. config
 
 xzfilename="${url##*/}"
 filename=`basename ${xzfilename} .xz`
@@ -36,14 +32,15 @@ start_sector=$(/sbin/fdisk -l ./${filename} | awk -F" "  '{ print $3 }' | tail -
 
 mkdir -p img-mount
 (sudo umount img-mount || /bin/true)
-sleep 3
 sudo mount -o loop,offset=$start_offset ./${filename} ./img-mount
 
 mkdir -p docker/rootfs
-sudo rsync -avxHAX --info=progress2 img-mount/ docker/rootfs/
+sudo rsync -axHAX --info=progress2 img-mount/ docker/rootfs/
 
 sudo umount ./img-mount
 rmdir img-mount
+
+echo $name >.release
 
 echo "$url extracted to rootfs/"
 
