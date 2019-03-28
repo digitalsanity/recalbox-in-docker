@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Recalbox (shutdown X)
+Comment=Close your graphical Xorg session and launch recalbox.
+Exec=/usr/local/bin/recalbox-boot-fromx.sh
+Terminal=true
+X-MultipleArgs=false
+Type=Application
+Icon=recalbox
+Categories=Games;Media;AudioVideo;Player;Video;

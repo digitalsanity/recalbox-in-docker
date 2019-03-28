@@ -1,0 +1,63 @@
+# Remove folders mentioned here:
+# https://wiki.archlinux.org/index.php/Rsync#As_a_backup_utility
+/dev 
+#/proc
+#/sys
+#/tmp
+#/run
+#/mnt
+#/media
+/lost+found
+
+# Remove database's data
+# /var/lib/postgresql
+
+# Remove useless heavy files like /var/lib/scrapyd/reports.old
+#**/*.old
+#**/*.log
+#**/*.bak
+
+# Remove docker
+/var/lib/lxcfs
+/var/lib/docker
+/etc/docker
+/root/.docker
+/etc/init/docker.conf
+
+# Remove the current program
+/.dockerignore
+/Dockerfile
+
+# Remove unneeded init
+/etc/init.d/S01mountboot
+/etc/init.d/S02splash
+#S03populate
+#S05udev
+#S06dbus
+/etc/init.d/S07network
+/etc/init.d/S08connman
+/etc/init.d/S09wifi
+#S100kintaro
+#S11share
+/etc/init.d/S11upgrade
+#S12populateshare
+#S16modprobe
+#S20urandom
+#S25hyperion
+#S25lircd
+#S26recalboxsystem
+#S31emulationstation
+#S31sixad
+/etc/init.d/S32bluetooth
+#S35securepasswd
+/etc/init.d/S49ntp
+#S50avahi-daemon
+/etc/init.d/S50dropbear
+#S91smb
+#S92switch
+#S92virtualgamepads
+#S94manager
+#S98cleanup
+#S98xboxone
+#S99custom
+#/etc/init.d/S99rockprofan
