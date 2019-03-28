@@ -3,6 +3,29 @@ user=$USER
 
 . config
 
+# Determine OS platform
+UNAME=$(uname | tr "[:upper:]" "[:lower:]")
+# If Linux, try to determine specific distribution
+if [ "$UNAME" == "linux" ]; then
+    # If available, use LSB to identify distribution
+    if [ -f /etc/lsb-release -o -d /etc/lsb-release.d ]; then
+        export DISTRO=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
+    # Otherwise, use release info file
+    else
+        export DISTRO=$(ls -d /etc/[A-Za-z]*[_-][rv]e[lr]* | grep -v "lsb" | cut -d'/' -f3 | cut -d'-' -f1 | cut -d'_' -f1)
+    fi
+fi
+
+# For everything else (or if above failed), just use generic identifier
+[ "$DISTRO" == "" ] && export DISTRO=$UNAME
+[ "$DISTROID" == "" ] && export DISTROID=$(echo $DISTRO | tr "[:upper:]" "[:lower:]")
+
+# Determine arch
+ARCH=`dpkg --print-architecture`
+
+
+unset UNAME
+
 echo
 echo "* Build container for latest $name from $release_owner/$release"
 
@@ -30,13 +53,13 @@ sudo apt install -y \
        wget \
        screen
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-echo "deb [arch=armhf] https://download.docker.com/linux/debian \
+curl -fsSL https://download.docker.com/linux/${DISTROID}/gpg | sudo apt-key add -
+echo "deb [arch=${ARCH}] https://download.docker.com/linux/${DISTROID} \
        $(lsb_release -cs) stable" | \
        sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt update
 sudo apt install -y docker-ce
-sudo apt install -y docker.io
+# sudo apt install -y docker.io
 sudo docker version
 sudo addgroup $user docker
 sudo usermod -aG docker $user
