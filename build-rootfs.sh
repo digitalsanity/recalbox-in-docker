@@ -1,6 +1,10 @@
 #!/bin/bash
 
-url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
+# get specific file
+# url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
+
+# get latest release
+url=`curl -s https://api.github.com/repos/mrfixit2001/recalbox_rockpro64/releases/latest | grep -oP '"browser_download_url": "\K(.*)(?=")'`
 
 xzfilename="${url##*/}"
 filename=`basename ${xzfilename} .xz`
@@ -14,7 +18,7 @@ else
     echo "$filename exists.  Not downloading $url."
   else
     echo "Retrieving $url .."
-    wget $url
+    wget -q --show-progress --progress=bar:force:noscroll $url
   fi
 fi
 
@@ -36,7 +40,7 @@ sleep 3
 sudo mount -o loop,offset=$start_offset ./${filename} ./img-mount
 
 mkdir -p docker/rootfs
-sudo rsync -avxHAX --progress img-mount/ docker/rootfs/
+sudo rsync -avxHAX --info=progress2 img-mount/ docker/rootfs/
 
 sudo umount ./img-mount
 rmdir img-mount
