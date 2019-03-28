@@ -36,6 +36,7 @@ echo "deb [arch=armhf] https://download.docker.com/linux/debian \
        sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt update
 sudo apt install -y docker-ce
+sudo apt install -y docker.io
 sudo docker version
 sudo addgroup $user docker
 sudo usermod -aG docker $user
