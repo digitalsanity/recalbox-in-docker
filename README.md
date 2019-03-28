@@ -2,6 +2,8 @@
 
 Launch and play recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.  Your settings are stored in $HOME/recalbox-share/
 
+- This pulls the latest release from https://github.com/mrfixit2001/recalbox_rockpro64/releases and builds a docker container from the rootfs, allowing you to launch recalbox (and kodi) from most any debian/ubuntu host -- as long as the kernel rockchip version matches.  (4.4.171 tested, with arm64 kernel and armhf userspace)
+
 # Steps
 
 1. cd to this directory.
