@@ -39,5 +39,6 @@ sudo usermod -aG docker rock
 echo "Please reboot or logout/login before running any containers."
 
 echo "These commands will launch your container after it is built:"
-sudo cp *-boot*.sh /usr/local/bin
-sudo cp *.desktop /
+sudo cp *-boot*.sh /usr/local/bin/
+sudo cp *.desktop /usr/share/applications/
+ls /usr/local/bin/*-boot*.sh
