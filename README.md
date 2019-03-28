@@ -10,3 +10,8 @@ Launch recalbox/kodi (rockpro64 currently) via docker from your desktop.  Xorg w
 4. Optional: Review docker/rootfs and build-docker-from-rootfs.sh for files that will be removed.
 5. ./build-docker-from-rootfs.sh - Build docker from docker/rootfs.
 6. Launch Recalbox or /usr/local/bin/recalbox-boot-stopx.sh from desktop, or close your desktop and launch /usr/local/bin/recalbox-boot.sh from tty1.
+
+Regards,
+Jason Fisher
+
+- jason dot fisher at gmail dot com
