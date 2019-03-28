@@ -36,9 +36,13 @@ sleep 3
 sudo mount -o loop,offset=$start_offset ./${filename} ./img-mount
 
 mkdir -p docker/rootfs
-rsync -avxHAX --progress img-mount/ docker/rootfs/
+sudo rsync -avxHAX --progress img-mount/ docker/rootfs/
 
 sudo umount ./img-mount
 rmdir img-mount
 
 echo "$url extracted to rootfs/"
+
+# cleanup
+rm "${filename}"
+rm "${xzfilename}"

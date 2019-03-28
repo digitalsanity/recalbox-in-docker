@@ -1,8 +1,15 @@
 # recalbox-docker
 
-Launch recalbox/kodi (rockpro64 currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.
+Launch recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.
 
-# steps
+# Steps
+
+1. cd to this directory.
+2. ./install.sh
+3. Logout and back in or reboot
+4. Launch Recalbox from desktop (Media/Games)
+
+# Debugging steps
 
 1. cd to this directory.
 2. ./install-docker.sh - Install Docker and dependencies.
@@ -11,7 +18,7 @@ Launch recalbox/kodi (rockpro64 currently) via docker from your desktop.  Xorg w
 5. ./build-docker-from-rootfs.sh - Build docker from docker/rootfs.
 6. Launch Recalbox or /usr/local/bin/recalbox-boot-stopx.sh from desktop, or close your desktop and launch /usr/local/bin/recalbox-boot.sh from tty1.
 
-Regards,
-Jason Fisher
 
+Regards,
+- Jason Fisher
 - jason dot fisher at gmail dot com

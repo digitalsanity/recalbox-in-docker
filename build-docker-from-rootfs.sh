@@ -13,4 +13,5 @@ mv docker/rootfs/lost+found rootfs-excluded/
 
 echo "Building docker/Dockerfile from rootfs.."
 
+# sudo not needed here?
 sudo docker build -t recalbox/recalbox:master docker
