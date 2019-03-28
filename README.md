@@ -1,6 +1,6 @@
 # recalbox-docker
 
-Launch recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.
+Launch recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.  Your settings are stored in $HOME/recalbox-share/
 
 # Steps
 
@@ -9,6 +9,8 @@ Launch recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker fro
 3. If a RECALBOX folder pops up during install, close it.
 4. Logout and back in or reboot
 5. Launch Recalbox from desktop (Media/Games)
+
+Run ./install.sh again at any time to update recalbox to the latest version.  Your settings/files/add-ons will be retained in $HOME/recalbox-share/
 
 # Debugging steps
 
