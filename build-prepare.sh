@@ -3,13 +3,14 @@ user=$USER
 
 . config
 
-echo "Installing docker and adding $USER to docker group.  Reboot or logout afterwards to apply permissions to your accout."
+echo
+echo "* Build container for latest $name from $release_owner/$release"
 
 while true; do
     echo
     echo "Please review that you have all required kernel modules for docker:"
     echo
-    sleep 2
+    sleep 5
     curl -fsSL https://raw.githubusercontent.com/moby/moby/master/contrib/check-config.sh | bash | more
     read -p "Do you wish to continue installing docker? [yn] " yn
     case $yn in
