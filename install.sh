@@ -2,7 +2,7 @@
 
 . config
 
-./install-docker.sh
+./build-prepare.sh
 ./build-rootfs.sh
 ./build-docker-from-rootfs.sh
 
