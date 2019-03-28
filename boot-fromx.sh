@@ -13,5 +13,5 @@ then
 sudo chvt 1
 fi
 
-sudo screen bash -c "systemctl stop lightdm ; su $CURUSER -c /usr/local/bin/recalbox-boot.sh ; systemctl start lightdm"
+sudo screen bash -c "systemctl stop display-manager ; su $CURUSER -c /usr/local/bin/recalbox-boot.sh ; systemctl start display-manager"
 
