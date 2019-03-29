@@ -1,0 +1,29 @@
+[Unit]
+Description=Recalbox-in-docker
+After=network.target auditd.service
+Before=display-manager.service
+ConditionPathExists=/usr/local/bin/recalbox-service-exec.sh
+Conflicts=display-manager.service
+Conflicts=libreelec.service
+
+[Service]
+StandardInput=tty-force
+EnvironmentFile=/etc/environment
+EnvironmentFile=-/etc/default/recalbox-launcher
+ExecStart=/usr/local/bin/recalbox-service-exec.sh
+ExecStopPost=/usr/local/bin/recalbox-service-exit.sh
+KillMode=process
+
+# Uncomment this to always restart this container on shutdown
+Restart=on-failure
+
+# docker returns 130 on shutdown, 129 on reboot
+RestartPreventExitStatus=130 129 SIGKILL
+SuccessExitStatus=130 129 SIGKILL
+
+#type=simple
+#type=oneshot
+#TimeoutStartSec=5m
+
+[Install]
+WantedBy=multi-user.target

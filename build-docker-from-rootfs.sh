@@ -22,5 +22,5 @@ echo "Building docker/Dockerfile for $name from rootfs.."
 
 
 # sudo not needed here?
-sudo docker build -t $name/$name:master docker
+sudo docker build -t $name-launcher/$name-launcher:local docker
 

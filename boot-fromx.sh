@@ -1,6 +1,4 @@
 #!/bin/bash
-mkdir -p $HOME/recalbox-share
-
 read -p "WARNING: The graphical server is about to be shut down!
 Make sure you close all other apps before proceeding.
 Press Enter to continue, or Ctrl+C to cancel."
@@ -13,5 +11,5 @@ then
 sudo chvt 1
 fi
 
-sudo screen bash -c "systemctl stop display-manager ; su $CURUSER -c /usr/local/bin/recalbox-boot.sh ; systemctl start display-manager"
+sudo screen bash -c "systemctl stop display-manager ; su $CURUSER -c /usr/local/bin/libreelec-boot.sh ; systemctl start display-manager"
 

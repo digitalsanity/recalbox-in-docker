@@ -68,4 +68,11 @@ sudo usermod -aG docker $user
 
 sudo cp boot.sh /usr/local/bin/${name}-boot.sh
 sudo cp boot-fromx.sh /usr/local/bin/${name}-boot-fromx.sh
+sudo cp service-exit.sh /usr/local/bin/${name}-service-exit.sh
+sudo cp service-exec.sh /usr/local/bin/${name}-service-exec.sh
 sudo cp *.desktop /usr/share/applications/
+sudo cp *.service /etc/systemd/system/
+echo "serviceuser=$user" >etc-default-${name}-launcher
+echo "servicehome=$HOME" >>etc-default-${name}-launcher
+sudo cp etc-default-${name}-launcher /etc/default/${name}-launcher
+

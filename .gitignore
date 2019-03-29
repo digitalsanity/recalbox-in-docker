@@ -14,3 +14,4 @@ img-mount/
 *.rar
 *.lz
 /.release
+etc-default-*-launcher
