@@ -23,9 +23,9 @@ Run ./install.sh again at any time to update recalbox to the latest version.  Yo
 5. ./build-docker-from-rootfs.sh - Build docker from docker/rootfs.
 6. Launch Recalbox or /usr/local/bin/recalbox-boot-stopx.sh from desktop, or close your desktop and launch /usr/local/bin/recalbox-boot.sh from tty1.
 
-# Working setups
+# Working/tested
 
-- RockPro64
+- RockPro64 RK3399
   - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 or newer, mate armhf/bionic LXDE arm64 releases tested.  Must be on -1163 kernel or newer.
   - https://github.com/mrfixit2001/debian_desktop/releases - Second Release or newer.
 
