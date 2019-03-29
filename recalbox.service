@@ -1,6 +1,6 @@
 [Unit]
 Description=Recalbox-in-docker
-After=network.target auditd.service
+After=network.target docker.service
 Before=display-manager.service
 ConditionPathExists=/usr/local/bin/recalbox-service-exec.sh
 Conflicts=display-manager.service
@@ -18,8 +18,8 @@ KillMode=process
 Restart=on-failure
 
 # docker returns 130 on shutdown, 129 on reboot
-RestartPreventExitStatus=130 129 SIGKILL
-SuccessExitStatus=130 129 SIGKILL
+RestartPreventExitStatus=0 130 129 SIGKILL
+SuccessExitStatus=0 130 129 SIGKILL
 
 #type=simple
 #type=oneshot

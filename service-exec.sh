@@ -19,7 +19,7 @@ su $CURUSER -c /usr/local/bin/recalbox-boot.sh
 RETVAL=$?
 echo "docker returned $RETVAL"
 
-if [ $RETVAL -eq 130 ]; then
+if [ $RETVAL -eq 0 ]; then
   systemctl start display-manager
 fi
 

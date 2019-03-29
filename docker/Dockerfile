@@ -7,5 +7,7 @@ COPY rootfs/ /
 
 COPY startup.sh /
 
+VOLUME [ "/sys/fs/cgroup" ]
+
 RUN chmod 777 /startup.sh
 CMD ["bash","/startup.sh"]
