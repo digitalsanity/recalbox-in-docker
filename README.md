@@ -1,8 +1,8 @@
 # recalbox-docker
 
-Launch and play recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.  Your settings are stored in $HOME/recalbox-share/
+Launch and play recalbox/kodi (rockpro64/rock64 and Debian/Ubuntu host currently) via docker from your desktop.  Xorg will close but your services will continue.  Shutdown computer from Kodi to return to Recalbox.  Shutdown computer from Recalbox to return to Xorg.  Your settings are stored in $HOME/recalbox-share/
 
-- This pulls the latest release from https://github.com/mrfixit2001/recalbox_rockpro64/releases and builds a docker container from the rootfs, allowing you to launch recalbox (and kodi) from most any debian/ubuntu host -- as long as the kernel rockchip version matches.  (4.4.171 tested, with arm64 kernel and armhf userspace)
+- This pulls the latest release from https://github.com/mrfixit2001/recalbox_*/releases and builds a docker container from the rootfs, allowing you to launch recalbox (and kodi) from most any debian/ubuntu host -- as long as the kernel rockchip version matches.  (4.4.171 tested, with arm64 kernel and armhf userspace)
 
 # Steps
 
@@ -26,6 +26,11 @@ Run ./install.sh again at any time to update recalbox to the latest version.  Yo
 - ROCKPro64 (RK3399)
   - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 or newer, mate armhf/bionic LXDE arm64 releases tested.  Must be on -1163 kernel or newer.
   - https://github.com/mrfixit2001/debian_desktop/releases - Second Release or newer.
+
+# Should work
+
+- ROCK64 (RK3328)
+  - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 or newer, mate armhf/bionic LXDE arm64 releases.  Must be on -1163 kernel or newer.
 
 # Other notes
 
