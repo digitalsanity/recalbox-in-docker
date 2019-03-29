@@ -32,6 +32,12 @@ fi
 apiurl="https://api.github.com/repos/$release_owner/${releasename}_${release}/releases/latest"
 url=`curl -s "$apiurl" | grep -oP '"browser_download_url": "\K(.*)(?=")'`
 
+# no latest page.  trying to scrape the first valid release.
+if [ -z "$url" ]; then
+  apiurl="https://api.github.com/repos/$release_owner/${releasename}_${release}/releases"
+  url=`curl -s "$apiurl" | grep -oP '"browser_download_url": "\K(.*)(?=")' | grep "${release}_" | head -n5 | sort -r -n | head -n1`
+fi
+
 # get specific file instead
 # url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
 
