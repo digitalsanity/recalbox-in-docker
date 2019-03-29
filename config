@@ -4,8 +4,7 @@ name="recalbox"
 release_owner="mrfixit2001"
 releasename="recalbox"
 release="detect"
-
-#release="recalbox_rockpro64"
+#release="rockpro64"
 
 # wait for this process to start and then exit before letting the docker container die
 waitproc="bootexec"
@@ -16,17 +15,19 @@ extport=18080
 if [ $release == "detect" ]; then
   if (lsmod | grep "midgard_kbase" >/dev/null); then
     gpu=midgard
+    chipset=rk3399
     release=rockpro64
   elif (lsmod | grep "mali" >/dev/null); then
     gpu=utgard
+    chipset=rk3328
     release=rock64
   else
     gpu=midgard
     release=rockpro64
   fi
+  echo "Detect: $release ($chipset/$gpu)"
 fi
 
-echo "Detect: $release ($gpu)"
 
 apiurl="https://api.github.com/repos/$release_owner/${releasename}_${release}/releases/latest"
 url=`curl -s "$apiurl" | grep -oP '"browser_download_url": "\K(.*)(?=")'`
