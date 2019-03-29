@@ -7,10 +7,8 @@ Launch and play recalbox/kodi (rockpro64 and Debian/Ubuntu host currently) via d
 # Steps
 
 1. cd to this directory.
-2. ./install.sh (not with sudo)
-3. If a RECALBOX folder pops up during install, close it.
-4. Logout and back in or reboot
-5. Launch Recalbox from desktop (Media/Games)
+2. ./install.sh (not with sudo; if a RECALBOX folder pops up during install, close/ignore it; takes 15-20 minutes to complete)
+3. Launch Recalbox from desktop application launcher (Media/Games/Video)
 
 Run ./install.sh again at any time to update recalbox to the latest version.  Your settings/files/add-ons will be retained in $HOME/recalbox-share/
 
@@ -25,9 +23,13 @@ Run ./install.sh again at any time to update recalbox to the latest version.  Yo
 
 # Working/tested
 
-- RockPro64 RK3399
+- ROCKPro64 (RK3399)
   - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 or newer, mate armhf/bionic LXDE arm64 releases tested.  Must be on -1163 kernel or newer.
   - https://github.com/mrfixit2001/debian_desktop/releases - Second Release or newer.
+
+# Other notes
+
+- If you lose audio in Kodi, try different shutdown/reboot/quit options.  I think there may be an issue with multiple kodilauncher.sh running simultaneously.
 
 Regards,
 - Jason Fisher
