@@ -2,15 +2,35 @@
 name="recalbox"
 
 release_owner="mrfixit2001"
-release="recalbox_rockpro64"
+release="detect"
 
+#release="recalbox_rockpro64"
+
+# wait for this process to start and then exit before letting the docker container die
 waitproc="bootexec"
 inport=80
 extport=18080
-launchdelay=35
+
+# autodetection needs work
+if [ $release == "detect" ]; then
+  if ! `lsmod | grep midgard_kbase`; then
+    gpu=midgard
+    release=rockpro64
+  elif ! `lsmod | grep mali`; then
+    gpu=utgard
+    release=rock64
+  else
+    gpu=midgard
+    release=rockpro64
+  fi
+fi
+
+echo $gpu  
+echo $release
 
 url=`curl -s https://api.github.com/repos/$release_owner/$release/releases/latest | grep -oP '"browser_download_url": "\K(.*)(?=")'`
 
 # get specific file instead
 # url="https://github.com/mrfixit2001/recalbox_rockpro64/releases/download/190222/recalbox_rockpro64_190222.img.xz"
 
+echo "Release: $url"
