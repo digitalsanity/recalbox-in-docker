@@ -11,5 +11,5 @@ then
 sudo chvt 1
 fi
 
-sudo screen bash -c "systemctl stop display-manager ; su $CURUSER -c /usr/local/bin/libreelec-boot.sh ; systemctl start display-manager"
+sudo screen bash -c "systemctl stop display-manager ; su $CURUSER -c /usr/local/bin/recalbox-boot.sh ; systemctl start display-manager"
 
