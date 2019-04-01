@@ -36,13 +36,13 @@ If you want to boot directly into Recalbox:
 # Working/tested
 
 - ROCKPro64 (RK3399)
-  - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 -- rc6 does not work -- mate armhf, bionic LXDE arm64, minimal armhf releases tested.  The container release does not work.  Must be on -1163 kernel or newer.
+  - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 -- rc6 does not work -- openmediavault armhf, mate armhf, bionic LXDE arm64, minimal armhf releases tested.  The container release does not work.  Must be on -1161 kernel or newer.
   - https://github.com/mrfixit2001/debian_desktop/releases - Second Release or newer.
 
 # Should work
 
 - ROCK64 (RK3328)
-  - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 -- rc6 does not work -- mate armhf, bionic LXDE arm64, minimal armhf releases tested.  The container release does not work.  Must be on -1163 kernel or newer.
+  - https://github.com/ayufan-rock64/linux-build/releases 0.8.0rc5 -- rc6 does not work -- openmediavault armhf, mate armhf, bionic LXDE arm64, minimal armhf releases tested.  The container release does not work.  Must be on -1161 kernel or newer.
 
 # Other notes
 
